@@ -761,7 +761,7 @@ function BookingPanel({ selected, onRemove, onNotify, onDone }) {
   useEffect(() => {
     if (!hold?.holdExpiresAt) return;
     const tick = () => {
-      const seconds = Math.max(0, Math.floor((new Date(hold.holdExpiresAt).getTime() - Date.now()) / 1000));
+      const seconds = Math.max(0, Math.floor((new Date(hold.holdExpiresAt + "Z").getTime() - Date.now()) / 1000));
       if (seconds === 0) setHold(null);
       else setHold(h => h ? ({...h, seconds}) : h);
     };
