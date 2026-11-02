@@ -1,0 +1,2 @@
+package com.sportshub.controller; import com.sportshub.dto.ApiDtos.*; import com.sportshub.service.PricingService; import jakarta.validation.Valid; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/quotes") public class QuoteController {final PricingService p; public QuoteController(PricingService p){this.p=p;} @PostMapping public QuoteResponse quote(@Valid @RequestBody QuoteRequest q){return p.quote(q);}}

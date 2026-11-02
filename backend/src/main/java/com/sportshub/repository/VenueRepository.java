@@ -1,0 +1,1 @@
+package com.sportshub.repository; import com.sportshub.domain.*; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface VenueRepository extends JpaRepository<Venue,Long>{ List<Venue> findByCityId(Long cityId); List<Venue> findByCityIdAndSportId(Long cityId,Long sportId); }

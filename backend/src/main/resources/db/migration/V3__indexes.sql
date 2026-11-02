@@ -1,0 +1,1 @@
+CREATE INDEX idx_venue_city_sport ON venue(city_id,sport_id); CREATE INDEX idx_park_city_category ON park(city_id,category_id); CREATE INDEX idx_stadium_city_sport ON stadium(city_id,sport_id);

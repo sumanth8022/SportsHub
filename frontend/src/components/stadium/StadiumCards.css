@@ -1,0 +1,307 @@
+/* Stadium Tickets City Banner & Enhanced Stadium Card Styles */
+
+.stadium-city-banner {
+  background: linear-gradient(135deg, rgba(30, 27, 75, 0.95) 0%, rgba(42, 26, 143, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(42, 26, 143, 0.2);
+}
+
+.stadium-city-intro h3 {
+  margin: 0 0 6px 0;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: #ffffff;
+}
+
+.stadium-city-intro p {
+  margin: 0 0 18px 0;
+  font-size: 14px;
+  color: #c7d2fe;
+  max-width: 720px;
+  line-height: 1.45;
+}
+
+.stadium-city-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.stadium-city-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stadium-city-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.stadium-city-btn.active {
+  background: #ffffff;
+  color: #1e1b4b;
+  border-color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.city-pin {
+  font-size: 15px;
+}
+
+.city-count-badge {
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.25);
+  color: #cbd5e1;
+  padding: 2px 7px;
+  border-radius: 12px;
+}
+
+.stadium-city-btn.active .city-count-badge {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+/* Enhanced Stadium Card */
+.stadium-card-enhanced {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.stadium-card-enhanced:hover {
+  box-shadow: 0 12px 28px rgba(42, 26, 143, 0.15);
+  transform: translateY(-3px);
+}
+
+.stadium-card-enhanced.active {
+  border: 2px solid #4a2fe0;
+  box-shadow: 0 0 0 3px rgba(74, 47, 224, 0.2);
+}
+
+.stadium-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #1e1b4b;
+}
+
+.stadium-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.stadium-card-image-wrap:hover .stadium-card-img {
+  transform: scale(1.05);
+}
+
+.stadium-card-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 40%, rgba(15,23,42,0.85) 100%);
+  pointer-events: none;
+}
+
+.stadium-card-badges-top {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.card-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 6px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.capacity-badge {
+  background: rgba(15, 23, 42, 0.8);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.rating-badge {
+  background: rgba(245, 158, 11, 0.9);
+  color: #ffffff;
+}
+
+.stadium-card-city-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(15, 23, 42, 0.85);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.stands-tag-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 6px 0;
+}
+
+.stands-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-right: 2px;
+}
+
+.stand-tag-pill {
+  font-size: 11px;
+  font-weight: 600;
+  background: #f1f0fb;
+  color: #4338ca;
+  border: 1px solid #e0e7ff;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.stand-tag-pill.more {
+  background: #eef2ff;
+  color: #6366f1;
+}
+
+.cricket-ball-icon {
+  font-size: 14px;
+}
+
+/* Card Button Grid */
+.stadium-card-btn-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn-stadium-action {
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  border: none;
+}
+
+.btn-view-3d-card {
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+.btn-view-3d-card:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
+}
+
+.btn-book-card {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.btn-book-card:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.35);
+}
+
+.card-actions-sub {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.card-actions-sub .travel-card-button {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.details-link-button {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.details-link-button:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+@media (max-width: 640px) {
+  .stadium-city-banner {
+    padding: 16px 18px;
+  }
+  .stadium-city-intro h3 {
+    font-size: 18px;
+  }
+  .stadium-city-pills {
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .stadium-city-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .stadium-card-btn-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

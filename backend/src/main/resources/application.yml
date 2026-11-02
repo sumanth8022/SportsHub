@@ -1,0 +1,31 @@
+server: { port: 8080 }
+spring:
+  datasource: { url: jdbc:h2:file:./data/sportshub;AUTO_SERVER=TRUE;MODE=PostgreSQL, username: sa, password: , driver-class-name: org.h2.Driver }
+  jpa: { hibernate: { ddl-auto: validate }, open-in-view: false }
+  flyway: { enabled: true, locations: classpath:db/migration }
+  h2: { console: { enabled: true, path: /h2-console } }
+  jackson: { time-zone: Asia/Kolkata }
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: 2100039061cse.r@gmail.com
+    password: hhgq hvfw dpvl negw
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
+payment:
+  demo:
+    enabled: true
+management: { endpoints: { web: { exposure: { include: health,info } } } }
+springdoc: { swagger-ui: { path: /swagger-ui.html } }
+sportshub:
+  cors: { allowed-origin: http://localhost:5173 }
+  pricing: { evening-weekend-multiplier: 1.30, child-multiplier: 0.60, family-discount: 0.90, convenience-fee-rate: 0.02 }
+  holds: { minutes: 10 }

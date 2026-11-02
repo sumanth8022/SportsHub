@@ -1,0 +1,8 @@
+package com.sportshub.repository;
+
+import com.sportshub.domain.*;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.*;
+
+public interface SportRepository extends JpaRepository<Sport, Long> {
+}

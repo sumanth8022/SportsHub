@@ -1,0 +1,35 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  jackson:
+    time-zone: Asia/Kolkata
+
+sportshub:
+  cors:
+    allowed-origin: ${CORS_ALLOWED_ORIGIN:http://localhost:5173}
+  pricing:
+    evening-weekend-multiplier: 1.30
+    child-multiplier: 0.60
+    family-discount: 0.90
+    convenience-fee-rate: 0.02
+  holds:
+    minutes: 10
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

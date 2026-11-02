@@ -1,0 +1,1 @@
+package com.sportshub.repository; import com.sportshub.domain.*; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface StandCategoryRepository extends JpaRepository<StandCategory,Long>{  }

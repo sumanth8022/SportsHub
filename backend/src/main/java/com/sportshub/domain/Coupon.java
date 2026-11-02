@@ -1,0 +1,3 @@
+package com.sportshub.domain;
+import jakarta.persistence.*; import lombok.*; import java.math.*; import java.time.*;
+@Entity @Table(name="coupon") @Getter @Setter @NoArgsConstructor public class Coupon { @Id private Long id; @Column(nullable=false,unique=true) private String code; @Column(name="percent_off",nullable=false) private BigDecimal percentOff; private boolean active; @Column(name="valid_until") private LocalDateTime validUntil; }

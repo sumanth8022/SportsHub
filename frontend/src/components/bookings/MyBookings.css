@@ -1,0 +1,702 @@
+/* MyBookings.css */
+.my-bookings-container {
+  width: 100%;
+  animation: mbFadeIn 0.25s ease-out;
+}
+
+@keyframes mbFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mb-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid var(--line, #ddd6f7);
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(42, 26, 143, 0.05);
+}
+
+.mb-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: var(--brand, #4a2fe0);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.mb-title {
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink, #1c1537);
+  letter-spacing: -0.02em;
+}
+
+.mb-subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted, #6b6585);
+  max-width: 620px;
+}
+
+.mb-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mb-refresh-btn {
+  border: 1px solid var(--line, #ddd6f7);
+  background: #f8f6ff;
+  color: var(--deep, #2a1a8f);
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mb-refresh-btn:hover {
+  background: #eeeaff;
+  border-color: var(--brand, #4a2fe0);
+}
+
+.mb-explore-btn {
+  border: none;
+  background: var(--brand, #4a2fe0);
+  color: #ffffff;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mb-explore-btn:hover {
+  background: var(--deep, #2a1a8f);
+  transform: translateY(-1px);
+}
+
+/* Filter Bar */
+.mb-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.mb-filter-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted, #6b6585);
+}
+
+.mb-filter-pill {
+  border: 1px solid var(--line, #ddd6f7);
+  background: #ffffff;
+  color: var(--ink, #1c1537);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mb-filter-pill:hover {
+  border-color: var(--brand, #4a2fe0);
+  background: #f8f6ff;
+}
+
+.mb-filter-pill.active {
+  background: var(--deep, #2a1a8f);
+  border-color: var(--deep, #2a1a8f);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* States */
+.mb-loading-state,
+.mb-empty-state,
+.mb-error-box {
+  background: #ffffff;
+  border: 1px solid var(--line, #ddd6f7);
+  border-radius: 20px;
+  padding: 48px 24px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.mb-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3.5px solid #eeeaff;
+  border-top-color: var(--brand, #4a2fe0);
+  border-radius: 50%;
+  animation: mbSpin 0.75s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes mbSpin {
+  to { transform: rotate(360deg); }
+}
+
+.mb-empty-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.mb-empty-state h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink, #1c1537);
+}
+
+.mb-empty-state p {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: var(--muted, #6b6585);
+}
+
+.mb-empty-cta {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Bookings Grid */
+.mb-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mb-card {
+  background: #ffffff;
+  border: 1.5px solid var(--line, #ddd6f7);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(42, 26, 143, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.mb-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(42, 26, 143, 0.12);
+  border-color: #c7bcf5;
+}
+
+/* Card Header */
+.mb-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: #fbfaff;
+  border-bottom: 1px solid var(--line, #ddd6f7);
+  padding: 14px 20px;
+}
+
+.mb-card-id-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mb-id-badge {
+  font-size: 12px;
+  font-weight: 800;
+  background: #ede9fe;
+  color: var(--deep, #2a1a8f);
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.4px;
+}
+
+.mb-status-pill {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.mb-status-pill.confirmed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.mb-status-pill.cancelled {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.mb-status-pill.held {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.mb-status-pill.other {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.mb-pay-status-pill {
+  font-size: 11px;
+  font-weight: 700;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.mb-entry-code-block {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mb-code-label {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--muted, #6b6585);
+  letter-spacing: 0.5px;
+}
+
+.mb-code-value {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--deep, #2a1a8f);
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.6px;
+  font-family: monospace;
+}
+
+/* Card Body */
+.mb-card-body {
+  padding: 20px;
+}
+
+.mb-event-title {
+  margin: 0 0 6px;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--ink, #1c1537);
+  letter-spacing: -0.01em;
+}
+
+.mb-venue-name {
+  font-size: 14px;
+  color: var(--ink, #1c1537);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mb-stand-badge {
+  font-size: 12px;
+  font-weight: 700;
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.mb-venue-address {
+  font-size: 13px;
+  color: var(--muted, #6b6585);
+  margin-bottom: 16px;
+}
+
+/* Meta Details Grid */
+.mb-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.mb-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mb-meta-label {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--muted, #6b6585);
+  letter-spacing: 0.4px;
+}
+
+.mb-meta-value {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink, #1c1537);
+}
+
+.mb-meta-value.price {
+  font-size: 16px;
+  font-weight: 800;
+  color: #16a34a;
+}
+
+.mb-total-tkt-badge {
+  font-size: 11px;
+  color: var(--muted, #6b6585);
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+/* Card Footer */
+.mb-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--line, #ddd6f7);
+  background: #ffffff;
+}
+
+.mb-qr-preview-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mb-qr-thumb {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 2px;
+}
+
+.mb-qr-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mb-qr-text {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink, #1c1537);
+}
+
+.mb-qr-verified {
+  font-size: 11px;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+.mb-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mb-view-pass-btn {
+  background: var(--brand, #4a2fe0);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 9px 18px;
+  border-radius: 8px;
+}
+
+.mb-view-pass-btn:hover {
+  background: var(--deep, #2a1a8f);
+}
+
+.mb-dl-btn,
+.mb-dl-qr-btn {
+  font-size: 12px;
+  padding: 9px 14px;
+  border-radius: 8px;
+}
+
+/* Cancel Button & Actions */
+.mb-cancel-btn {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 9px 14px;
+  border-radius: 8px;
+  background: #fff;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.mb-cancel-btn:hover:not(:disabled) {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #991b1b;
+}
+
+.mb-cancel-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.mb-cancelled-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #fca5a5;
+}
+
+/* Feedback Alert Banner */
+.mb-feedback-banner {
+  margin-bottom: 20px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.mb-feedback-banner.success {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.mb-feedback-banner.error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.mb-feedback-close {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: inherit;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+/* Confirmation Dialog Modal */
+.mb-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+  animation: fadeIn 0.18s ease-out;
+}
+
+.mb-modal-box {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mb-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mb-modal-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.mb-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.mb-modal-body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.mb-modal-body strong {
+  color: #0f172a;
+}
+
+.mb-modal-warning {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #fff7ed;
+  border-left: 4px solid #f97316;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #9a3412;
+}
+
+.mb-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.mb-modal-actions .btn.danger {
+  background: #dc2626;
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.mb-modal-actions .btn.danger:hover:not(:disabled) {
+  background: #b91c1c;
+}
+
+.mb-modal-actions .btn.danger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 680px) {
+  .mb-header-row {
+    padding: 18px 16px;
+  }
+  .mb-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mb-action-buttons {
+    width: 100%;
+  }
+  .mb-action-buttons button {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* 24-Hour Refund Status Card */
+.mb-refund-status-card {
+  margin-top: 14px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mb-refund-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.mb-refund-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.mb-refund-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #92400e;
+}
+
+.mb-refund-desc {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: #78350f;
+  line-height: 1.4;
+}
+
+.mb-refund-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #92400e;
+  border-top: 1px dashed #fcd34d;
+  padding-top: 8px;
+}
+
+.mb-refund-meta code {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  background: #fef3c7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.mb-refund-status-badge {
+  background: #d97706;
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+

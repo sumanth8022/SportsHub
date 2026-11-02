@@ -1,0 +1,1 @@
+package com.sportshub.service; import org.springframework.scheduling.annotation.Scheduled; import org.springframework.stereotype.Component; @Component public class HoldExpiryJob {final BookingService s;public HoldExpiryJob(BookingService s){this.s=s;}@Scheduled(fixedDelay=60000)public void run(){s.expire();}}

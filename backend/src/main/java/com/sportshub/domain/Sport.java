@@ -1,0 +1,1 @@
+package com.sportshub.domain; import jakarta.persistence.*; import lombok.*; @Entity @Table(name="sport") @Getter @Setter @NoArgsConstructor public class Sport { @Id private Long id; @Column(nullable=false,unique=true) private String name; private String color; private String icon; }

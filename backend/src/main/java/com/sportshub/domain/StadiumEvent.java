@@ -1,0 +1,3 @@
+package com.sportshub.domain;
+import jakarta.persistence.*; import lombok.*; import java.time.*;
+@Entity @Table(name="stadium_event") @Getter @Setter @NoArgsConstructor public class StadiumEvent { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @ManyToOne(optional=false) @JoinColumn(name="stadium_id") private Stadium stadium; @Column(nullable=false) private String title; @Column(name="starts_at",nullable=false) private LocalDateTime startsAt; private Integer capacity; }

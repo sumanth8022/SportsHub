@@ -1,0 +1,2 @@
+package com.sportshub.domain; import lombok.*; import java.io.Serializable; import java.time.*;
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode public class SlotReservationId implements Serializable { private Long venueId; private LocalDate slotDate; private Integer startHour; }
